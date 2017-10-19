@@ -1,3 +1,3 @@
 # Gmail
 
-This code makes the download of Gmail accounts by reading from a config file (that contains user and password), writes the e-mails in files and makes a put in HDFS. It is also download attachments. The process occurs in parallel so like this it can be distributed for each node on the cluster.
+This code makes the download of Gmail accounts by reading from a config file (that contains user and password), writes the e-mails in files and makes a put in HDFS. It is also download attachments. The process occurs in parallel so like this it can be distributed for each node on the cluster. The code was meant to be executed in a scheduled way, so it was necessary to do a validation if it is necessary to download all the history of the account or just the new e-mails to solve this problem Redis is used to store the date from the last e-mail downloaded and comapares with the system date.
